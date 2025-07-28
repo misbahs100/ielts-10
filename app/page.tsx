@@ -6,10 +6,10 @@ import { ProductData, Seo } from './types/product'
 import { ProductPage } from './(components)/layout/MainLayout'
 import { genersateMetadata } from './lib/seo'
 
-export async function generateMetadata(seo: Seo): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   try {
     const res = await fetchProductData('en')
-    const data: ProductData = res.data;
+    const data: ProductData = res.data
     return genersateMetadata(data.seo)
   } catch {
     return {
