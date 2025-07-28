@@ -9,6 +9,7 @@ export async function generateMetadata() {
   return {
     title: product?.title || 'IELTS Course - 10MS',
     description: product?.description || 'Product page for IELTS Course by Munzereen Shahid on 10 Minute School',
+    // other seo tags will be added here.
   }
 }
 
