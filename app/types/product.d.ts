@@ -1,4 +1,3 @@
-// types/product.d.ts
 export interface Medium {
     name: string
     resource_type: string

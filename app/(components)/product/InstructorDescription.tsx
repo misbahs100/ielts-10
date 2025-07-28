@@ -1,5 +1,3 @@
-// app/(components)/InstructorDescription.tsx
-
 type Props = {
     description: string
   }

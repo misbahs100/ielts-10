@@ -16,7 +16,6 @@ export default function MoreCoursesCarousel() {
 
   useEffect(() => {
     async function fetchCourses() {
-      // Replace with real API if available
       const res = await fetch('/api/more-courses')
       const data = await res.json()
       setCourses(data)

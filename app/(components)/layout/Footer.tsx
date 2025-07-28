@@ -1,11 +1,10 @@
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
-import Link from 'next/link'
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-10 mt-20 ">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8 w-full ">
-        {/* Logo & Description */}
+        {/* logo  description */}
         <div>
           <h3 className="text-white text-xl font-bold mb-2">
             10 Minute School
@@ -15,7 +14,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* links */}
         <div>
           <h4 className="text-white font-semibold mb-2">Quick Links</h4>
           <ul className="space-y-1 text-sm">
@@ -26,7 +25,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact & Social */}
+        {/* social */}
         <div>
           <h4 className="text-white font-semibold mb-2">Follow Us</h4>
           <div className="flex space-x-4 mb-2">

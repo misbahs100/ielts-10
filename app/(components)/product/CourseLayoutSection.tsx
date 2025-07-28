@@ -1,6 +1,3 @@
-// app/(components)/product/CourseLayoutSection.tsx
-'use client'
-
 import { Section } from "@/app/types/product"
 
 

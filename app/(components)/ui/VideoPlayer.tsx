@@ -2,9 +2,7 @@ type Props = {
     url: string
   }
   
-  export default function VideoPlayer({ url }: Props) {
-    // Convert full YouTube URL to embed
-  
+  export default function VideoPlayer({ url }: Props) {  
     return (
       <iframe
         src={`https://www.youtube.com/embed/${url}`}

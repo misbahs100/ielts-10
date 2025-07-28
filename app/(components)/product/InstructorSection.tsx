@@ -1,6 +1,3 @@
-// app/(components)/product/InstructorSection.tsx
-'use client'
-
 import { Section } from "@/app/types/product"
 import InstructorDescription from "./InstructorDescription"
 

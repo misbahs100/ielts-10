@@ -1,4 +1,3 @@
-// app/(components)/product/ProductDescription.tsx
 type Props = {
     html: string
   }

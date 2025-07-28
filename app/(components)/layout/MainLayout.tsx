@@ -1,4 +1,3 @@
-// app/(components)/layout/MainLayout.tsx
 'use client'
 
 import { ProductData } from '@/app/types/product'
@@ -15,19 +14,19 @@ import CTASection from '../sidebar/CTASection'
 import Checklist from '../sidebar/Checklist'
 
 export function ProductPage({ data }: { data: ProductData }) {
-  console.log("main", data)
+  console.log("main: ", data)
   return (
     <main className="w-full px-4 md:px-8 max-w-screen-xl mx-auto py-8">
       {/* <div>
         <img src="" alt="" />
       </div> */}
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Left Side (2/3) */}
+        {/* left (2/3) */}
         <div className="w-full lg:w-2/3 flex flex-col gap-6">
           <ProductTitle title={data.title} />
           <ProductDescription html={data.description} />
 
-          {/* Optional: Sticky horizontal nav here */}
+          {/* optional: sticky horizontal nav */}
 
           <InstructorSection sections={data.sections} />
           <CourseLayoutSection sections={data.sections} />
@@ -36,11 +35,9 @@ export function ProductPage({ data }: { data: ProductData }) {
           <CourseDetails sections={data.sections} />
         </div>
 
-        {/* Right Side (1/3) */}
+        {/* right(1/3) */}
         <div className="w-full lg:w-1/3 space-y-4">
           <TrailerCarousel media={data.media} />
-
-          {/* Sticky price + CTA + checklist */}
           <div className="sticky top-4 z-10 space-y-4">
             <PriceTag />
             <CTASection cta={data.cta_text} />

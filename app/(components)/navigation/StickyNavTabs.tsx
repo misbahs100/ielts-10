@@ -15,7 +15,7 @@ type Props = {
   setActiveTab: (id: string) => void
 }
 
-export default function StickyNavTabs({ tabs, activeTab, setActiveTab }: Props) {
+export default function StickyNavTabs({tabs, activeTab, setActiveTab}: Props) {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const scroll = (direction: 'left' | 'right') => {

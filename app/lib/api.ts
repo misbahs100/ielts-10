@@ -1,5 +1,3 @@
-// lib/api.ts
-
 import { ProductData } from "../types/product"
 
 export async function fetchProductData(lang = 'en'): Promise<ProductData> {
@@ -10,7 +8,7 @@ export async function fetchProductData(lang = 'en'): Promise<ProductData> {
         'X-TENMS-SOURCE-PLATFORM': 'web',
         accept: 'application/json',
       },
-      next: { revalidate: 3600 }, // for ISR
+      next: { revalidate: 3600 }, // it is for the use of ISR
     }
   )
 

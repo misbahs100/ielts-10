@@ -6,7 +6,6 @@ type Props = {
 }
 
 export default function CTASection({ cta }: Props) {
-  console.log(cta)
   if (!cta?.name) return null
 
   return (

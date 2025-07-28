@@ -37,7 +37,7 @@ export default function TrailerCarousel({ media }: Props) {
           />
         )}
 
-        {/* Navigation Arrows */}
+        {/* arrows */}
         {media.length > 1 && (
           <>
             <button

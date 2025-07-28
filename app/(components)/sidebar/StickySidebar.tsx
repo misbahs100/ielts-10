@@ -1,5 +1,3 @@
-'use client'
-
 import PriceTag from './PriceTag'
 import CTASection from './CTASection'
 import Checklist from './Checklist'
