@@ -1,28 +1,45 @@
 // app/page.tsx
 import { Metadata } from 'next'
-import { ProductPage } from './(components)/layout/MainLayout'
-import { ProductData } from './types/product'
+import Skeleton from './(components)/ui/Skeleton'
 import { fetchProductData } from './lib/api'
+import { ProductData, Seo } from './types/product'
+import { ProductPage } from './(components)/layout/MainLayout'
+import { genersateMetadata } from './lib/seo'
 
-export const revalidate = 3600 // 1 hour ISR
-
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await fetchProductData()
-  return {
-    title: data.seo?.title || data.title,
-    description: data.seo?.description || '',
-    openGraph: {
-      title: data.seo?.title,
-      description: data.seo?.description,
-    },
+export async function generateMetadata(seo: Seo): Promise<Metadata> {
+  try {
+    const res = await fetchProductData('en')
+    const data: ProductData = res.data;
+    return genersateMetadata(data.seo)
+  } catch {
+    return {
+      title: 'IELTS Course - 10MS',
+      description: 'Product page',
+    }
   }
 }
 
 export default async function Page() {
-  const res = await fetchProductData();
-  // const result: ProductData = data;
-  const result: ProductData = res.data;
-  console.log(result);
+  let data: ProductData | null = null
 
-  return <ProductPage data={result} />
+  try {
+    data = await fetchProductData('en')
+    const res = await fetchProductData('en')
+    data = res.data;
+  } catch (e) {
+    // Handle fetch error if needed
+  }
+
+  if (!data) {
+    return (
+      <main className="max-w-screen-xl mx-auto p-4">
+        <Skeleton className="h-12 w-3/4 mb-4" />
+        <Skeleton className="h-6 w-full mb-2" />
+        <Skeleton className="h-6 w-full mb-2" />
+        <Skeleton className="h-48 w-full" />
+      </main>
+    )
+  }
+
+  return <ProductPage data={data} />
 }

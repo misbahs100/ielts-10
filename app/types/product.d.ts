@@ -1,7 +1,9 @@
 // types/product.d.ts
 export interface Medium {
-    type: string
-    url: string
+    name: string
+    resource_type: string
+    resource_value: string
+    thumbnail_url: string
   }
   
   export interface Checklist {
@@ -15,14 +17,17 @@ export interface Medium {
   }
   
   export interface CtaText {
-    text: string
+    name: string
+    value: string
   }
   
   export interface Section {
     type: string
-    title: string
+    bg_color: string
     description: string
-    items: any[]
+    name: string
+    order_idx: number
+    values: any[]
   }
   
   export interface ProductData {

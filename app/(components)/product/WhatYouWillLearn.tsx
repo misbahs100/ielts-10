@@ -14,10 +14,10 @@ export default function WhatYouWillLearn({ sections }: Props) {
 
   return (
     <section className="mt-8">
-      <h2 className="text-2xl font-semibold mb-4">{learnSection.title}</h2>
+      <h2 className="text-2xl font-semibold mb-4">{learnSection.name}</h2>
       <ul className="list-disc list-inside space-y-1 text-gray-700">
-        {learnSection.items?.map((item: string, idx: number) => (
-          <li key={idx}>{item}</li>
+        {learnSection.values?.map((item: {color: string, id: string, icon: string, text: string}, idx: number) => (
+          <li key={idx}>{item.text}</li>
         ))}
       </ul>
     </section>
